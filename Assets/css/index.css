@@ -1,0 +1,194 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: None;
+  list-style: none;
+  box-sizing: border-box;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+a {
+  font-size: 12px;
+}
+
+.main_container {
+  min-width: 100%;
+  padding: 0 40px;
+}
+
+/* TAG: SERVICE SECTION */
+.services_section {
+  display: grid;
+  min-height: 70vh;
+  grid-template-columns: [startline] 3% [col-1] auto [col-2] auto [col-3] auto [col-4] auto [endline] 3%;
+  grid-template-rows: [row-1] 25% [row-2] 25% [row-3] 25% [row-4] 25% [endline];
+  margin: 50px 0;
+}
+
+.services_section__heading {
+  grid-column: col-1/col-2;
+  grid-row: row-1;
+  margin: 20px;
+}
+.services_section__figure_1 {
+  grid-column: col-1/col-2;
+  grid-row: row-2/row-4;
+  margin: 20px;
+  padding: 15px;
+  border-image: linear-gradient(90deg, rgb(51, 0, 255), rgb(164, 189, 233));
+}
+.services_section__figure_2 {
+  grid-column: col-2/col-3;
+  grid-row: row-1/row-3;
+  margin: 20px;
+  padding: 15px;
+  border-image: linear-gradient(90deg, rgb(196, 9, 2), rgb(194, 150, 147));
+}
+.services_section__figure_3 {
+  grid-column: col-3/col-4;
+  grid-row: row-2/row-4;
+  margin: 20px;
+  padding: 15px;
+  border-image: linear-gradient(90deg, rgb(0, 0, 0), rgb(191, 191, 192));
+}
+.services_section__figure_4 {
+  grid-column: col-2/col-3;
+  grid-row: row-3/endline;
+  margin: 20px;
+  padding: 15px;
+  border-image: linear-gradient(90deg, rgb(8, 112, 82), rgb(89, 255, 208));
+}
+.services_section__heading p {
+  margin-bottom: 10px;
+}
+
+.services_section figure h3 {
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.services_section img {
+  max-width: 80px;
+  margin: 10px;
+}
+.services_section__heading span {
+  background: linear-gradient(
+    90deg,
+    rgba(9, 9, 121, 1) 35%,
+    rgb(63, 58, 222) 100%
+  );
+  display: block;
+  width: 20px;
+  height: 2px;
+}
+
+.services_section figure {
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  border-bottom: 2px solid transparent;
+  border-image-slice: 1;
+}
+
+/* TAG: Collage Section */
+.collage_section {
+  display: grid;
+  grid-gap: 15px;
+  height: 150vh;
+  min-width: 100%;
+  grid-template-columns: [col-1] auto [col-2] auto [col-3] auto [col-4] auto [endline];
+  grid-template-rows: [row-1] 12% [row-2] 20% [row-3] 20%;
+}
+.collage_section img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.collage_section > figure {
+  position: relative;
+}
+
+.collage_section__grapes {
+  grid-column-start: col-1;
+  grid-row-start: row-1;
+}
+.collage_section__strawberries {
+  grid-column-start: col-2;
+  grid-row-start: row-1;
+}
+.collage_section__watermelon {
+  grid-column: col-3/endline;
+  grid-row: row-1/row-3;
+}
+.collage_section__orange {
+  grid-column: col-1/col-3;
+  grid-row: row-2/row-3;
+}
+.collage_section__papaya {
+  grid-column: col-1/col-3;
+  grid-row-start: row-3;
+}
+
+.collage_section__pineapple {
+  grid-column: col-3/endline;
+  grid-row-start: row-3;
+}
+
+.collage_section figcaption {
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  height: calc(100% - 5px);
+  margin: 2.5px;
+  width: calc(100% - 5px);
+  font-size: 2rem;
+  background-color: black;
+  color: white;
+  opacity: 0.7;
+  display: none;
+}
+
+.collage_section figcaption:before,
+.collage_section figcaption:after {
+  content: "";
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border: solid white;
+  border-width: 3px 3px 0 0;
+}
+
+.collage_section figcaption:before {
+  right: 10px;
+  top: 10px;
+}
+
+.collage_section figcaption:after {
+  border-width: 0 0 3px 3px;
+  bottom: 10px;
+  left: 10px;
+}
+
+.collage_section figure:hover figcaption {
+  display: flex;
+}
+
+@media only screen and (max-width: 930px) {
+  .services_section {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .collage_section {
+    display: flex;
+    height: auto;
+    margin-bottom: 20px;
+    flex-direction: column;
+  }
+  .collage_section__figure_1 img {
+    width: 100%;
+    height: 200px;
+  }
+}
