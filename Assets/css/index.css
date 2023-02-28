@@ -9,9 +9,11 @@
 a {
   font-size: 12px;
 }
-
+body {
+  margin: 0 auto;
+  max-width: 1200px;
+}
 .main_container {
-  min-width: 100%;
   padding: 0 40px;
 }
 
